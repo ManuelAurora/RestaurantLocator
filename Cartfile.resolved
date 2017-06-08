@@ -1,0 +1,3 @@
+github "Alamofire/Alamofire" "4.4.0"
+github "SwiftyJSON/SwiftyJSON" "3.1.4"
+github "Yelp/yelp-fusion" "50fa66f73ddd5c40098f1dac32720cf8b60e0696"
