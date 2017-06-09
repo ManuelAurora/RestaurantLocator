@@ -7,31 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57D1A76A15EC8EAA7A5299FF /* libPods-YelmGMap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A14FA9378E1C615199EA365D /* libPods-YelmGMap.a */; };
 		642BB43F1EE9899C00A9F842 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642BB43E1EE9899C00A9F842 /* Business.swift */; };
 		64418A9F1EE9281B00128C48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64418A9E1EE9281B00128C48 /* AppDelegate.swift */; };
-		64418AA11EE9281B00128C48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64418AA01EE9281B00128C48 /* ViewController.swift */; };
-		64418AA41EE9281B00128C48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64418AA21EE9281B00128C48 /* Main.storyboard */; };
+		64418AA11EE9281B00128C48 /* GoogleMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64418AA01EE9281B00128C48 /* GoogleMapViewController.swift */; };
 		64418AA61EE9281B00128C48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64418AA51EE9281B00128C48 /* Assets.xcassets */; };
 		64418AA91EE9281B00128C48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64418AA71EE9281B00128C48 /* LaunchScreen.storyboard */; };
 		64418AB11EE9283F00128C48 /* YelpRequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64418AB01EE9283F00128C48 /* YelpRequestRouter.swift */; };
-		64418AB41EE92C3F00128C48 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64418AB21EE92C3F00128C48 /* Alamofire.framework */; };
-		64418AB51EE92C3F00128C48 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 64418AB21EE92C3F00128C48 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		64418AB61EE92C3F00128C48 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64418AB31EE92C3F00128C48 /* SwiftyJSON.framework */; };
-		64418AB71EE92C3F00128C48 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 64418AB31EE92C3F00128C48 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		64418ABA1EE93D6B00128C48 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64418AB91EE93D6B00128C48 /* Helpers.swift */; };
 		64418ABC1EE9513000128C48 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64418ABB1EE9513000128C48 /* Token.swift */; };
 		64418ABE1EE953D900128C48 /* UserStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64418ABD1EE953D900128C48 /* UserStateMachine.swift */; };
+		64EDD0651EEA7FC20006DA15 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64EDD0641EEA7FC20006DA15 /* Alamofire.framework */; };
+		64EDD0661EEA7FC20006DA15 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 64EDD0641EEA7FC20006DA15 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		64EDD0691EEA7FCC0006DA15 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64EDD0681EEA7FCC0006DA15 /* SwiftyJSON.framework */; };
+		64EDD06A1EEA7FCC0006DA15 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 64EDD0681EEA7FCC0006DA15 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		64EDD06D1EEA87790006DA15 /* GoogleMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EDD06C1EEA87790006DA15 /* GoogleMapViewModel.swift */; };
+		64EDD06F1EEA9A940006DA15 /* GoogleMapviewController + GoogleMapsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EDD06E1EEA9A940006DA15 /* GoogleMapviewController + GoogleMapsDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		64418AB81EE92C3F00128C48 /* Embed Frameworks */ = {
+		64EDD0671EEA7FC20006DA15 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				64418AB71EE92C3F00128C48 /* SwiftyJSON.framework in Embed Frameworks */,
-				64418AB51EE92C3F00128C48 /* Alamofire.framework in Embed Frameworks */,
+				64EDD06A1EEA7FCC0006DA15 /* SwiftyJSON.framework in Embed Frameworks */,
+				64EDD0661EEA7FC20006DA15 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -39,11 +41,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		02F34951ABAA2590182AC836 /* Pods-YelmGMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YelmGMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YelmGMap/Pods-YelmGMap.debug.xcconfig"; sourceTree = "<group>"; };
 		642BB43E1EE9899C00A9F842 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		64418A9B1EE9281B00128C48 /* YelmGMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YelmGMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64418A9E1EE9281B00128C48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		64418AA01EE9281B00128C48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		64418AA31EE9281B00128C48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		64418AA01EE9281B00128C48 /* GoogleMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapViewController.swift; sourceTree = "<group>"; };
 		64418AA51EE9281B00128C48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64418AA81EE9281B00128C48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64418AAA1EE9281B00128C48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +55,12 @@
 		64418AB91EE93D6B00128C48 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		64418ABB1EE9513000128C48 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		64418ABD1EE953D900128C48 /* UserStateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStateMachine.swift; sourceTree = "<group>"; };
+		64EDD0641EEA7FC20006DA15 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		64EDD0681EEA7FCC0006DA15 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		64EDD06C1EEA87790006DA15 /* GoogleMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapViewModel.swift; sourceTree = "<group>"; };
+		64EDD06E1EEA9A940006DA15 /* GoogleMapviewController + GoogleMapsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GoogleMapviewController + GoogleMapsDelegate.swift"; sourceTree = "<group>"; };
+		A14FA9378E1C615199EA365D /* libPods-YelmGMap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YelmGMap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3B7B67B3A94C583755F70F7 /* Pods-YelmGMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YelmGMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-YelmGMap/Pods-YelmGMap.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,21 +68,71 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64418AB61EE92C3F00128C48 /* SwiftyJSON.framework in Frameworks */,
-				64418AB41EE92C3F00128C48 /* Alamofire.framework in Frameworks */,
+				57D1A76A15EC8EAA7A5299FF /* libPods-YelmGMap.a in Frameworks */,
+				64EDD0651EEA7FC20006DA15 /* Alamofire.framework in Frameworks */,
+				64EDD0691EEA7FCC0006DA15 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		642BB4421EEA776100A9F842 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				64418ABB1EE9513000128C48 /* Token.swift */,
+				642BB43E1EE9899C00A9F842 /* Business.swift */,
+				64418ABD1EE953D900128C48 /* UserStateMachine.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		642BB4431EEA776600A9F842 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				64418AA01EE9281B00128C48 /* GoogleMapViewController.swift */,
+				64EDD06E1EEA9A940006DA15 /* GoogleMapviewController + GoogleMapsDelegate.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		642BB4441EEA776E00A9F842 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				64418AA71EE9281B00128C48 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		642BB4451EEA777400A9F842 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				64EDD06B1EEA87100006DA15 /* ViewModel */,
+				64418A9E1EE9281B00128C48 /* AppDelegate.swift */,
+				64418AB91EE93D6B00128C48 /* Helpers.swift */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		642BB4461EEA778400A9F842 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				64418AB01EE9283F00128C48 /* YelpRequestRouter.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
 		64418A921EE9281B00128C48 = {
 			isa = PBXGroup;
 			children = (
+				64EDD0681EEA7FCC0006DA15 /* SwiftyJSON.framework */,
+				64EDD0641EEA7FC20006DA15 /* Alamofire.framework */,
 				64418AB21EE92C3F00128C48 /* Alamofire.framework */,
 				64418AB31EE92C3F00128C48 /* SwiftyJSON.framework */,
 				64418A9D1EE9281B00128C48 /* YelmGMap */,
 				64418A9C1EE9281B00128C48 /* Products */,
+				6A7B468708EF7F13D5DF3980 /* Pods */,
+				78954C1F1306003A00EB5A2B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,19 +147,40 @@
 		64418A9D1EE9281B00128C48 /* YelmGMap */ = {
 			isa = PBXGroup;
 			children = (
-				64418A9E1EE9281B00128C48 /* AppDelegate.swift */,
-				64418AA01EE9281B00128C48 /* ViewController.swift */,
-				64418AB01EE9283F00128C48 /* YelpRequestRouter.swift */,
-				64418ABD1EE953D900128C48 /* UserStateMachine.swift */,
-				64418AA21EE9281B00128C48 /* Main.storyboard */,
-				64418AA51EE9281B00128C48 /* Assets.xcassets */,
-				64418AA71EE9281B00128C48 /* LaunchScreen.storyboard */,
+				642BB4461EEA778400A9F842 /* Networking */,
+				642BB4451EEA777400A9F842 /* Other */,
+				642BB4441EEA776E00A9F842 /* View */,
+				642BB4431EEA776600A9F842 /* Controller */,
+				642BB4421EEA776100A9F842 /* Model */,
 				64418AAA1EE9281B00128C48 /* Info.plist */,
-				64418AB91EE93D6B00128C48 /* Helpers.swift */,
-				64418ABB1EE9513000128C48 /* Token.swift */,
-				642BB43E1EE9899C00A9F842 /* Business.swift */,
+				64418AA51EE9281B00128C48 /* Assets.xcassets */,
 			);
 			path = YelmGMap;
+			sourceTree = "<group>";
+		};
+		64EDD06B1EEA87100006DA15 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				64EDD06C1EEA87790006DA15 /* GoogleMapViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		6A7B468708EF7F13D5DF3980 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				02F34951ABAA2590182AC836 /* Pods-YelmGMap.debug.xcconfig */,
+				A3B7B67B3A94C583755F70F7 /* Pods-YelmGMap.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		78954C1F1306003A00EB5A2B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A14FA9378E1C615199EA365D /* libPods-YelmGMap.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,10 +190,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 64418AAD1EE9281B00128C48 /* Build configuration list for PBXNativeTarget "YelmGMap" */;
 			buildPhases = (
+				53E3E4F5A91AD1802DC35447 /* [CP] Check Pods Manifest.lock */,
 				64418A971EE9281B00128C48 /* Sources */,
 				64418A981EE9281B00128C48 /* Frameworks */,
 				64418A991EE9281B00128C48 /* Resources */,
-				64418AB81EE92C3F00128C48 /* Embed Frameworks */,
+				586A446DBF1A0A91A2AC7FE1 /* [CP] Embed Pods Frameworks */,
+				8F0F2DD51454EE689F5C2367 /* [CP] Copy Pods Resources */,
+				64EDD0671EEA7FC20006DA15 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,11 +249,58 @@
 			files = (
 				64418AA91EE9281B00128C48 /* LaunchScreen.storyboard in Resources */,
 				64418AA61EE9281B00128C48 /* Assets.xcassets in Resources */,
-				64418AA41EE9281B00128C48 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		53E3E4F5A91AD1802DC35447 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		586A446DBF1A0A91A2AC7FE1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YelmGMap/Pods-YelmGMap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F0F2DD51454EE689F5C2367 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YelmGMap/Pods-YelmGMap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		64418A971EE9281B00128C48 /* Sources */ = {
@@ -179,10 +308,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				64418ABE1EE953D900128C48 /* UserStateMachine.swift in Sources */,
+				64EDD06F1EEA9A940006DA15 /* GoogleMapviewController + GoogleMapsDelegate.swift in Sources */,
 				642BB43F1EE9899C00A9F842 /* Business.swift in Sources */,
+				64EDD06D1EEA87790006DA15 /* GoogleMapViewModel.swift in Sources */,
 				64418AB11EE9283F00128C48 /* YelpRequestRouter.swift in Sources */,
 				64418ABC1EE9513000128C48 /* Token.swift in Sources */,
-				64418AA11EE9281B00128C48 /* ViewController.swift in Sources */,
+				64418AA11EE9281B00128C48 /* GoogleMapViewController.swift in Sources */,
 				64418A9F1EE9281B00128C48 /* AppDelegate.swift in Sources */,
 				64418ABA1EE93D6B00128C48 /* Helpers.swift in Sources */,
 			);
@@ -191,14 +322,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		64418AA21EE9281B00128C48 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				64418AA31EE9281B00128C48 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		64418AA71EE9281B00128C48 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -305,6 +428,7 @@
 		};
 		64418AAE1EE9281B00128C48 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02F34951ABAA2590182AC836 /* Pods-YelmGMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2FNB386G38;
@@ -322,6 +446,7 @@
 		};
 		64418AAF1EE9281B00128C48 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3B7B67B3A94C583755F70F7 /* Pods-YelmGMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2FNB386G38;

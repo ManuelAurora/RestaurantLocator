@@ -32,23 +32,15 @@ fileprivate enum ParamValues
     static let clientSecret = "aNReQe9VxmHA5QlcVY6Nysf61gM87lRZWJbQgtxELWod5a1B3SAFypD1w7w9m7xo"
 }
 
-fileprivate let userDefaults = UserDefaults.standard
-fileprivate let userDefTokenKey = String(describing: YelpRequestRouter.accessToken)
-
 // MARK: Yelp Request Router
 enum YelpRequestRouter
 {
     case accessToken
-    case businesess(String)
+    case businesess(String, radius: String)
     
     private static let baseUrlString = "https://api.yelp.com/"
-    
-    private var token: Token? {
-        guard let tokenData = userDefaults.data(forKey: userDefTokenKey),
-            let token = NSKeyedUnarchiver.unarchiveObject(with: tokenData) as? Token else {
-                return nil
-        }
-        return token
+    private var stateMachine: UserStateMachine {
+        return UserStateMachine.shared
     }
     
     var headers: HTTPHeaders? {
@@ -57,7 +49,9 @@ enum YelpRequestRouter
         case .accessToken: return nil
             
         case .businesess:
-            if let token = token, let type = token.type, let value = token.value
+            if let token = stateMachine.token,
+                let type = token.type,
+                let value = token.value
             {
                 return [HeaderKeys.authorization: "\(type) \(value)"]
             }
@@ -77,16 +71,15 @@ enum YelpRequestRouter
             params[ParamKeys.clientId] = ParamValues.clientId
             params[ParamKeys.clientSecret] = ParamValues.clientSecret
             
-        case .businesess(let term):            
-            if let location = stateMachine.userLocation
-            {
-                let latitude  = location.coordinate.latitude
-                let longitude = location.coordinate.longitude
-                
-                params[ParamKeys.latitude] = String(latitude)
-                params[ParamKeys.longitude] = String(longitude)
-            }
-            params[ParamKeys.radius] = "1000"
+        case .businesess(let term, let radius):
+            let location  = stateMachine.searchLocation
+            let latitude  = location.latitude
+            let longitude = location.longitude
+            
+            params[ParamKeys.latitude] = String(latitude)
+            params[ParamKeys.longitude] = String(longitude)
+            
+            params[ParamKeys.radius] = radius
             params[ParamKeys.term] = term
         }
         
@@ -117,7 +110,7 @@ enum YelpRequestRouter
     }
     
     func get(_ completion: (()->())? = nil) {
-        
+                    
         let params = parameters
         
         Alamofire.request(urlForRequest,
@@ -136,7 +129,7 @@ enum YelpRequestRouter
             {
             case .accessToken:
                 let token = Token(json: json)
-                self.save(token: token)
+                self.stateMachine.save(token: token)
                 completion?()
                 
             case .businesess:
@@ -144,15 +137,14 @@ enum YelpRequestRouter
                     return Business(json: businessJ)
                 }
                 
-                print(businesess)
+                businesess.forEach {
+                    guard $0 != nil else { return }
+                    self.stateMachine.businesess.append($0!)
+                }
+                
+                NotificationCenter.default.post(name: .didRecieveBusinesess,
+                                                object: nil)
             }
         }
-    }
-    
-    private func save(token: Token) {
-        
-        let encodedData = NSKeyedArchiver.archivedData(withRootObject: token)
-        
-        userDefaults.setValue(encodedData, forKey: userDefTokenKey)
     }
 }

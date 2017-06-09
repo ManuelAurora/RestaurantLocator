@@ -9,9 +9,14 @@
 import UIKit
 import CoreLocation
 
+fileprivate let userDefaults = UserDefaults.standard
+fileprivate let userDefTokenKey = String(describing: YelpRequestRouter.accessToken)
+
 class UserStateMachine: NSObject
 {
     static let shared = UserStateMachine()
+    
+    fileprivate let nc = NotificationCenter.default
     
     fileprivate lazy var locationManager: CLLocationManager = {
         let manager = CLLocationManager()
@@ -22,33 +27,46 @@ class UserStateMachine: NSObject
         return manager
     }()
     
-    private var timer: Timer?
-    private(set) var _userLocation: CLLocation?
+    var businesess = [Business]()
+    var currentMapZoom: Float = 17
     
+    fileprivate var isProperValueRecieved: Bool = false
+    private var timer: Timer?
+    private var _userLocation: CLLocation?
     private var testLocation: CLLocation {
         let loc = CLLocation(latitude: 37.774929 ,
                              longitude: -122.419416)
         return loc
     }
     
+    var searchLocation = CLLocationCoordinate2D()
+    
+    var token: Token? {
+        guard let tokenData = userDefaults.data(forKey: userDefTokenKey),
+            let token = NSKeyedUnarchiver.unarchiveObject(with: tokenData) as? Token else {
+                return nil
+        }
+        return token
+    }    
+    
     var userLocation: CLLocation? {
         set {
             _userLocation = newValue
         }
         get {
-            return testLocation
-//            if let usrLoc = _userLocation
-//            {
-//                return usrLoc
-//            }
-//            else
-//            {                
-//                return nil
-//            }
+            
+            if let usrLoc = _userLocation
+            {
+                return usrLoc
+            }
+            else
+            {
+                return nil
+            }
         }
     }
     
-    private func updateUserLocation() {
+    func updateUserLocation() {
         
         guard authorized() else { locationManager.requestLocation(); return }
         
@@ -102,6 +120,13 @@ class UserStateMachine: NSObject
                                                                     animated: true,
                                                                     completion: nil)
     }
+    
+    func save(token: Token) {
+        
+        let encodedData = NSKeyedArchiver.archivedData(withRootObject: token)
+        
+        userDefaults.setValue(encodedData, forKey: userDefTokenKey)
+    }
 }
 
 extension UserStateMachine: CLLocationManagerDelegate
@@ -118,9 +143,11 @@ extension UserStateMachine: CLLocationManagerDelegate
                 userLocation = newLoc
             }
             
-            if newLoc.horizontalAccuracy >= locationManager.desiredAccuracy
+            if !isProperValueRecieved || newLoc.horizontalAccuracy >= locationManager.desiredAccuracy
             {
+                isProperValueRecieved = true
                 locationManager.stopUpdatingLocation()
+                nc.post(name: .didRecieveCoordinate, object: nil)
             }
         }
     }

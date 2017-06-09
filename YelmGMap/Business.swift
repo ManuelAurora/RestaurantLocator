@@ -69,15 +69,14 @@ struct Business
             let imageUrl    = json["image_url"].string,
             let displayPhone = json["display_phone"].string,
             let url         = json["url"].string,
-            let price       = json["price"].string,
-            let location    = json["location"].dictionaryObject,
+            let price       = json["price"].string,            
             let longitude   = json["coordinates"]["longitude"].double,
             let latitude    = json["coordinates"]["latitude"].double,
-            let city        = location["city"] as? String,
-            let zipCode     = location["zip_code"] as? String,
-            let country     = location["country"] as? String,
-            let address     = location["address1"] as? String,
-            let state       = location["state"] as? String            
+            let city        = json["location"]["city"].string,
+            let zipCode     = json["location"]["zip_code"].string,
+            let country     = json["location"]["country"].string,
+            let address     = json["location"]["address1"].string,
+            let state       = json["location"]["state"].string
             else { return nil }
         
         var categoriesToAppend = [Category]()
@@ -108,7 +107,7 @@ struct Business
                                     price: price,
                                     name: name,
                                     reviewCount: reviewCount,
-                                    location: businessLocation)
-               
+                                    location: businessLocation)        
+        
     }
 }
