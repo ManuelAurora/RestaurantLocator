@@ -26,7 +26,7 @@ extension GoogleMapViewController: GMSMapViewDelegate
         
         let view = MarkerView(frame: CGRect(origin: marker.infoWindowAnchor,
                                             size: CGSize(width: 180,
-                                                         height: 100)))
+                                                         height: 80)))
         view.backgroundColor = .white
         view.layer.cornerRadius = 8
         view.layoutViews()
@@ -46,14 +46,8 @@ extension GoogleMapViewController: GMSMapViewDelegate
         var ratingString = ""
         
         if let business = business
-        {
-            let rating = business.displayInfo.rating
-            
-            
-            for _ in 0..<rating
-            {
-                ratingString += "⭐️"
-            }
+        {            
+            ratingString = business.getRatingString()
         }
         return ratingString
     }

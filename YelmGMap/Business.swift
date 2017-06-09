@@ -117,4 +117,16 @@ class Business
                                     location: businessLocation)        
         
     }
+    
+    func getRatingString() -> String {
+        
+        let rating = self.displayInfo.rating
+        var ratingString = ""
+        
+        for _ in 0..<rating
+        {
+            ratingString += "⭐️"
+        }        
+        return ratingString
+    }
 }

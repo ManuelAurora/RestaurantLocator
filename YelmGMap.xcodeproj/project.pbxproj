@@ -26,6 +26,11 @@
 		64EDD0711EEABEC20006DA15 /* ChachedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EDD0701EEABEC20006DA15 /* ChachedImageView.swift */; };
 		64EDD0731EEAC53B0006DA15 /* MarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EDD0721EEAC53B0006DA15 /* MarkerView.swift */; };
 		64EDD0751EEAC5760006DA15 /* VIew + Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EDD0741EEAC5760006DA15 /* VIew + Anchor.swift */; };
+		64EDD0771EEAD4A60006DA15 /* BusinessDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EDD0761EEAD4A60006DA15 /* BusinessDetailViewController.swift */; };
+		64EDD0791EEAD4BD0006DA15 /* BusinessDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64EDD0781EEAD4BD0006DA15 /* BusinessDetailViewController.storyboard */; };
+		64EDD07B1EEAD4F00006DA15 /* BusinessCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EDD07A1EEAD4F00006DA15 /* BusinessCollectionViewCell.swift */; };
+		64EDD07D1EEAD9280006DA15 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EDD07C1EEAD9280006DA15 /* DetailViewModel.swift */; };
+		64EDD07F1EEAD9520006DA15 /* DetailViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EDD07E1EEAD9520006DA15 /* DetailViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -65,6 +70,11 @@
 		64EDD0701EEABEC20006DA15 /* ChachedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChachedImageView.swift; sourceTree = "<group>"; };
 		64EDD0721EEAC53B0006DA15 /* MarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerView.swift; sourceTree = "<group>"; };
 		64EDD0741EEAC5760006DA15 /* VIew + Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VIew + Anchor.swift"; sourceTree = "<group>"; };
+		64EDD0761EEAD4A60006DA15 /* BusinessDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessDetailViewController.swift; sourceTree = "<group>"; };
+		64EDD0781EEAD4BD0006DA15 /* BusinessDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BusinessDetailViewController.storyboard; sourceTree = "<group>"; };
+		64EDD07A1EEAD4F00006DA15 /* BusinessCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessCollectionViewCell.swift; sourceTree = "<group>"; };
+		64EDD07C1EEAD9280006DA15 /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		64EDD07E1EEAD9520006DA15 /* DetailViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewDataSource.swift; sourceTree = "<group>"; };
 		A14FA9378E1C615199EA365D /* libPods-YelmGMap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YelmGMap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B7B67B3A94C583755F70F7 /* Pods-YelmGMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YelmGMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-YelmGMap/Pods-YelmGMap.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +99,7 @@
 				64418ABB1EE9513000128C48 /* Token.swift */,
 				642BB43E1EE9899C00A9F842 /* Business.swift */,
 				64418ABD1EE953D900128C48 /* UserStateMachine.swift */,
+				64EDD07E1EEAD9520006DA15 /* DetailViewDataSource.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -98,6 +109,7 @@
 			children = (
 				64418AA01EE9281B00128C48 /* GoogleMapViewController.swift */,
 				64EDD06E1EEA9A940006DA15 /* GoogleMapviewController + GoogleMapsDelegate.swift */,
+				64EDD0761EEAD4A60006DA15 /* BusinessDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -106,9 +118,11 @@
 			isa = PBXGroup;
 			children = (
 				64418AA71EE9281B00128C48 /* LaunchScreen.storyboard */,
+				64EDD0781EEAD4BD0006DA15 /* BusinessDetailViewController.storyboard */,
 				64EDD0701EEABEC20006DA15 /* ChachedImageView.swift */,
 				64EDD0721EEAC53B0006DA15 /* MarkerView.swift */,
 				64EDD0741EEAC5760006DA15 /* VIew + Anchor.swift */,
+				64EDD07A1EEAD4F00006DA15 /* BusinessCollectionViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -116,7 +130,6 @@
 		642BB4451EEA777400A9F842 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				64EDD06B1EEA87100006DA15 /* ViewModel */,
 				64418A9E1EE9281B00128C48 /* AppDelegate.swift */,
 				64418AB91EE93D6B00128C48 /* Helpers.swift */,
 			);
@@ -157,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				642BB4461EEA778400A9F842 /* Networking */,
+				64EDD06B1EEA87100006DA15 /* ViewModel */,
 				642BB4451EEA777400A9F842 /* Other */,
 				642BB4441EEA776E00A9F842 /* View */,
 				642BB4431EEA776600A9F842 /* Controller */,
@@ -171,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				64EDD06C1EEA87790006DA15 /* GoogleMapViewModel.swift */,
+				64EDD07C1EEAD9280006DA15 /* DetailViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -258,6 +273,7 @@
 			files = (
 				64418AA91EE9281B00128C48 /* LaunchScreen.storyboard in Resources */,
 				64418AA61EE9281B00128C48 /* Assets.xcassets in Resources */,
+				64EDD0791EEAD4BD0006DA15 /* BusinessDetailViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,9 +333,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				64418ABE1EE953D900128C48 /* UserStateMachine.swift in Sources */,
+				64EDD0771EEAD4A60006DA15 /* BusinessDetailViewController.swift in Sources */,
 				64EDD06F1EEA9A940006DA15 /* GoogleMapviewController + GoogleMapsDelegate.swift in Sources */,
 				642BB43F1EE9899C00A9F842 /* Business.swift in Sources */,
 				64EDD06D1EEA87790006DA15 /* GoogleMapViewModel.swift in Sources */,
+				64EDD07F1EEAD9520006DA15 /* DetailViewDataSource.swift in Sources */,
 				64418AB11EE9283F00128C48 /* YelpRequestRouter.swift in Sources */,
 				64418ABC1EE9513000128C48 /* Token.swift in Sources */,
 				64EDD0731EEAC53B0006DA15 /* MarkerView.swift in Sources */,
@@ -327,6 +345,8 @@
 				64EDD0711EEABEC20006DA15 /* ChachedImageView.swift in Sources */,
 				64418A9F1EE9281B00128C48 /* AppDelegate.swift in Sources */,
 				64418ABA1EE93D6B00128C48 /* Helpers.swift in Sources */,
+				64EDD07B1EEAD4F00006DA15 /* BusinessCollectionViewCell.swift in Sources */,
+				64EDD07D1EEAD9280006DA15 /* DetailViewModel.swift in Sources */,
 				64EDD0751EEAC5760006DA15 /* VIew + Anchor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
