@@ -3,6 +3,30 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "MarkerView.layoutViews() -&gt; ():MarkerView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GoogleMapViewController.(updateMap() -&gt; ()).(closure #1):GoogleMapViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.businesess.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GoogleMapViewController.getBusinesses() -&gt; ():GoogleMapViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = " gMapViewModel.getBusinesess()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "YelpRequestRouter.get(() -&gt; ()?) -&gt; ():YelpRequestRouter.swift">
       </ContextState>
       <ContextState
@@ -14,12 +38,15 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GoogleMapViewController.getBusinesses() -&gt; ():GoogleMapViewController.swift">
+         contextName = "GoogleMapViewController.mapView(GMSMapView, didTap : GMSMarker) -&gt; Bool:GoogleMapviewController + GoogleMapsDelegate.swift">
          <PersistentStrings>
             <PersistentString
-               value = " gMapViewModel.getBusinesess()">
+               value = "marker.iconView">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "YelpRequestRouter.(get(() -&gt; ()?) -&gt; ()).(parse #1)(json : JSON) -&gt; ():YelpRequestRouter.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

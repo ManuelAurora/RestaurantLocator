@@ -19,7 +19,7 @@ class GoogleMapViewController: UIViewController
         return mv
     }()
     
-    private var businesess = [Business]() {
+    var businesess = [Business]() {
         didSet {
             updateMap()
         }
@@ -62,16 +62,19 @@ class GoogleMapViewController: UIViewController
         
     private func updateMap() {
         
-        mapView.clear()
-        
         businesess.forEach { business in
+            guard business.isOnTheMap == false else { return }
+            
+            business.setOnMap()
             
             let marker = GMSMarker()
             let coord = business.devInfo.coordinate
             marker.position = CLLocationCoordinate2D(latitude: coord.latitude,
                                                      longitude: coord.longitude)
+            
             marker.title = business.displayInfo.name
             marker.snippet = business.displayInfo.location.address
+            marker.appearAnimation = .pop           
             marker.map = mapView
         }        
     }
@@ -133,7 +136,7 @@ class GoogleMapViewController: UIViewController
         let topCenterLocation = CLLocation(latitude: topCenterCoordinate.latitude, longitude: topCenterCoordinate.longitude)
         
         let radius = CLLocationDistance(centerLocation.distance(from: topCenterLocation))
-        print(radius)
+       
         return Int(round(radius))
     }
 }

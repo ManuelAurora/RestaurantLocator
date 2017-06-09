@@ -19,6 +19,7 @@ fileprivate enum ParamKeys
     static let latitude     = "latitude"
     static let longitude    = "longitude"
     static let radius       = "radius"
+    static let limit        = "limit"
 }
 
 fileprivate enum HeaderKeys
@@ -30,6 +31,7 @@ fileprivate enum ParamValues
 {
     static let clientId = "4dhv5RSlcL7Eh61WydcjKg"
     static let clientSecret = "aNReQe9VxmHA5QlcVY6Nysf61gM87lRZWJbQgtxELWod5a1B3SAFypD1w7w9m7xo"
+    static let limit = "50"
 }
 
 // MARK: Yelp Request Router
@@ -78,7 +80,7 @@ enum YelpRequestRouter
             
             params[ParamKeys.latitude] = String(latitude)
             params[ParamKeys.longitude] = String(longitude)
-            
+            params[ParamKeys.limit] = ParamValues.limit
             params[ParamKeys.radius] = radius
             params[ParamKeys.term] = term
         }
@@ -137,9 +139,14 @@ enum YelpRequestRouter
                     return Business(json: businessJ)
                 }
                 
-                businesess.forEach {
-                    guard $0 != nil else { return }
-                    self.stateMachine.businesess.append($0!)
+                businesess.forEach { business in
+                    guard business != nil else { return }
+                    if !self.stateMachine.businesess.contains { bus in
+                        return bus.devInfo.id == business!.devInfo.id
+                        }
+                    {
+                        self.stateMachine.businesess.append(business!)
+                    }
                 }
                 
                 NotificationCenter.default.post(name: .didRecieveBusinesess,

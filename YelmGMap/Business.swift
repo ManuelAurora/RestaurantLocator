@@ -53,10 +53,17 @@ struct InfoToDisplay
 }
 
 //MARK: Business model
-struct Business
+class Business
 {
     let devInfo: DevInfo
     let displayInfo: InfoToDisplay
+    
+    private(set) var isOnTheMap: Bool = false
+    
+    func setOnMap() {
+        
+        isOnTheMap = true
+    }
     
     init?(json: JSON) {
         guard let id        = json["id"].string,

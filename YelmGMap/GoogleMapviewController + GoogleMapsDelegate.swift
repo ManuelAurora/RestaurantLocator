@@ -22,5 +22,40 @@ extension GoogleMapViewController: GMSMapViewDelegate
         makeRequest()
     }
     
+    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
+        
+        let view = MarkerView(frame: CGRect(origin: marker.infoWindowAnchor,
+                                            size: CGSize(width: 180,
+                                                         height: 100)))
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 8
+        view.layoutViews()
+        view.titleLabel.text = marker.title
+        view.descriptionLabel.text = marker.snippet
+        view.ratingLabel.text = getRatingFor(marker: marker)
+            
+        return view
+    }
+    
+    private func getRatingFor(marker: GMSMarker) -> String {
+        
+        let business = businesess.filter {
+            $0.displayInfo.name == marker.title &&
+                $0.displayInfo.location.address == marker.snippet
+            }.first
+        var ratingString = ""
+        
+        if let business = business
+        {
+            let rating = business.displayInfo.rating
+            
+            
+            for _ in 0..<rating
+            {
+                ratingString += "⭐️"
+            }
+        }
+        return ratingString
+    }
     
 }
