@@ -31,6 +31,10 @@
 		64EDD07B1EEAD4F00006DA15 /* BusinessCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EDD07A1EEAD4F00006DA15 /* BusinessCollectionViewCell.swift */; };
 		64EDD07D1EEAD9280006DA15 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EDD07C1EEAD9280006DA15 /* DetailViewModel.swift */; };
 		64EDD07F1EEAD9520006DA15 /* DetailViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EDD07E1EEAD9520006DA15 /* DetailViewDataSource.swift */; };
+		64EDD0831EEFF7360006DA15 /* UIViewController + StoryboardInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EDD0821EEFF7360006DA15 /* UIViewController + StoryboardInstance.swift */; };
+		64EDD0851EF0007D0006DA15 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EDD0841EF0007D0006DA15 /* Review.swift */; };
+		64EDD0871EF0061D0006DA15 /* ReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EDD0861EF0061D0006DA15 /* ReviewCollectionViewCell.swift */; };
+		64EDD0891EF0152D0006DA15 /* DetailInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EDD0881EF0152D0006DA15 /* DetailInfoHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -75,6 +79,10 @@
 		64EDD07A1EEAD4F00006DA15 /* BusinessCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessCollectionViewCell.swift; sourceTree = "<group>"; };
 		64EDD07C1EEAD9280006DA15 /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		64EDD07E1EEAD9520006DA15 /* DetailViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewDataSource.swift; sourceTree = "<group>"; };
+		64EDD0821EEFF7360006DA15 /* UIViewController + StoryboardInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController + StoryboardInstance.swift"; sourceTree = "<group>"; };
+		64EDD0841EF0007D0006DA15 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		64EDD0861EF0061D0006DA15 /* ReviewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		64EDD0881EF0152D0006DA15 /* DetailInfoHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailInfoHeader.swift; sourceTree = "<group>"; };
 		A14FA9378E1C615199EA365D /* libPods-YelmGMap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YelmGMap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B7B67B3A94C583755F70F7 /* Pods-YelmGMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YelmGMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-YelmGMap/Pods-YelmGMap.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +108,7 @@
 				642BB43E1EE9899C00A9F842 /* Business.swift */,
 				64418ABD1EE953D900128C48 /* UserStateMachine.swift */,
 				64EDD07E1EEAD9520006DA15 /* DetailViewDataSource.swift */,
+				64EDD0841EF0007D0006DA15 /* Review.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -110,6 +119,7 @@
 				64418AA01EE9281B00128C48 /* GoogleMapViewController.swift */,
 				64EDD06E1EEA9A940006DA15 /* GoogleMapviewController + GoogleMapsDelegate.swift */,
 				64EDD0761EEAD4A60006DA15 /* BusinessDetailViewController.swift */,
+				64EDD0821EEFF7360006DA15 /* UIViewController + StoryboardInstance.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -123,6 +133,8 @@
 				64EDD0721EEAC53B0006DA15 /* MarkerView.swift */,
 				64EDD0741EEAC5760006DA15 /* VIew + Anchor.swift */,
 				64EDD07A1EEAD4F00006DA15 /* BusinessCollectionViewCell.swift */,
+				64EDD0861EF0061D0006DA15 /* ReviewCollectionViewCell.swift */,
+				64EDD0881EF0152D0006DA15 /* DetailInfoHeader.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -336,6 +348,8 @@
 				64EDD0771EEAD4A60006DA15 /* BusinessDetailViewController.swift in Sources */,
 				64EDD06F1EEA9A940006DA15 /* GoogleMapviewController + GoogleMapsDelegate.swift in Sources */,
 				642BB43F1EE9899C00A9F842 /* Business.swift in Sources */,
+				64EDD0871EF0061D0006DA15 /* ReviewCollectionViewCell.swift in Sources */,
+				64EDD0891EF0152D0006DA15 /* DetailInfoHeader.swift in Sources */,
 				64EDD06D1EEA87790006DA15 /* GoogleMapViewModel.swift in Sources */,
 				64EDD07F1EEAD9520006DA15 /* DetailViewDataSource.swift in Sources */,
 				64418AB11EE9283F00128C48 /* YelpRequestRouter.swift in Sources */,
@@ -343,9 +357,11 @@
 				64EDD0731EEAC53B0006DA15 /* MarkerView.swift in Sources */,
 				64418AA11EE9281B00128C48 /* GoogleMapViewController.swift in Sources */,
 				64EDD0711EEABEC20006DA15 /* ChachedImageView.swift in Sources */,
+				64EDD0851EF0007D0006DA15 /* Review.swift in Sources */,
 				64418A9F1EE9281B00128C48 /* AppDelegate.swift in Sources */,
 				64418ABA1EE93D6B00128C48 /* Helpers.swift in Sources */,
 				64EDD07B1EEAD4F00006DA15 /* BusinessCollectionViewCell.swift in Sources */,
+				64EDD0831EEFF7360006DA15 /* UIViewController + StoryboardInstance.swift in Sources */,
 				64EDD07D1EEAD9280006DA15 /* DetailViewModel.swift in Sources */,
 				64EDD0751EEAC5760006DA15 /* VIew + Anchor.swift in Sources */,
 			);

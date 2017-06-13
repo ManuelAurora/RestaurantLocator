@@ -27,6 +27,7 @@ class UserStateMachine: NSObject
         return manager
     }()
     
+    var reviews = [Review]()
     var businesess = [Business]()
     var currentMapZoom: Float = 17
        

@@ -10,19 +10,17 @@ import Foundation
 
 class DetailBusinessDataSource
 {
-    let sections: [SectionType] = [.image, .basicInfo, .categories, .reviews]
+    let sections: [SectionType] = [.basicInfo, .reviews]
+    var reviews: [Review] {
+        return UserStateMachine.shared.reviews
+    }
 }
 
 extension DetailBusinessDataSource
 {
     enum SectionType
     {
-        case basicInfo
-        case image
-        case categories
+        case basicInfo        
         case reviews
-    }
-    
-    
-    
+    }       
 }

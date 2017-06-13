@@ -34,11 +34,13 @@ fileprivate enum ParamValues
     static let limit = "50"
 }
 
+//GET /v3/businesses/{id}/reviews
 // MARK: Yelp Request Router
 enum YelpRequestRouter
 {
     case accessToken
     case businesess(String, radius: String)
+    case reviews(String)
     
     private static let baseUrlString = "https://api.yelp.com/"
     private var stateMachine: UserStateMachine {
@@ -50,7 +52,7 @@ enum YelpRequestRouter
         {
         case .accessToken: return nil
             
-        case .businesess:
+        case .businesess, .reviews:
             if let token = stateMachine.token,
                 let type = token.type,
                 let value = token.value
@@ -83,6 +85,9 @@ enum YelpRequestRouter
             params[ParamKeys.limit] = ParamValues.limit
             params[ParamKeys.radius] = radius
             params[ParamKeys.term] = term
+            
+        case .reviews:
+            break
         }
         
         return params
@@ -92,7 +97,7 @@ enum YelpRequestRouter
         switch self
         {
         case .accessToken: return .post
-        case .businesess: return .get
+        case .businesess, .reviews: return .get
         }
     }
     
@@ -101,6 +106,7 @@ enum YelpRequestRouter
         {
         case .accessToken: return "oauth2/token"
         case .businesess: return "v3/businesses/search"
+        case .reviews(let id): return "v3/businesses/\(id)/reviews"
         }
     }
     
@@ -157,9 +163,19 @@ enum YelpRequestRouter
                         stateMachine.businesess.append(business!)
                     }
                 }
+                NotificationCenter.default.post(name: .didRecieveBusinesess,
+                                                object: nil)
+                
+            case .reviews:
+                let reviews = json["reviews"].arrayValue.map { reviewJ in
+                    return Review(json: reviewJ)
+                }
+                
+                stateMachine.reviews = reviews
+                NotificationCenter.default.post(name: .didRecieveReviews,
+                                                object: nil)
+                print(reviews)
             }
-            NotificationCenter.default.post(name: .didRecieveBusinesess,
-                                            object: nil)
         }
     }
 }

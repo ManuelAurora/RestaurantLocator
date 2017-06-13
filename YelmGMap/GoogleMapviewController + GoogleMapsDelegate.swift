@@ -37,6 +37,26 @@ extension GoogleMapViewController: GMSMapViewDelegate
         return view
     }
     
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        
+        let filtered = self.gMapViewModel.getBusinesess().filter {
+            $0.marker === marker
+        }
+        
+        _ = BusinessDetailViewController.storyboardInstance() { vc in
+            if let business = filtered.first
+            {
+                vc.businessToShow = business
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            else
+            {
+                mapView.clear()
+                self.makeRequest()
+            }
+        }
+    }
+    
     private func getRatingFor(marker: GMSMarker) -> String {
         
         let business = gMapViewModel.getBusinesess().filter {

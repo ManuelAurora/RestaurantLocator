@@ -3,20 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "GoogleMapViewController.(deleteMarkers() -&gt; ()).(closure #1):GoogleMapViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "marker.icon">
-            </PersistentString>
-            <PersistentString
-               value = "business.marker?.iconView">
-            </PersistentString>
-            <PersistentString
-               value = "businesess">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "GoogleMapViewController.updateMap() -&gt; ():GoogleMapViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -25,18 +11,26 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "YelpRequestRouter.(get(() -&gt; ()?) -&gt; ()).(parse #1)(json : JSON) -&gt; ():YelpRequestRouter.swift">
+         contextName = "BusinessDetailViewController.viewWillAppear(Bool) -&gt; ():BusinessDetailViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "stateMachine.businesess">
+               value = "businessToShow">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GoogleMapViewController.makeRequest() -&gt; ():GoogleMapViewController.swift">
+         contextName = "YelpRequestRouter.get(() -&gt; ()?) -&gt; ():YelpRequestRouter.swift">
          <PersistentStrings>
             <PersistentString
-               value = "gMapViewModel.getBusinesess()">
+               value = "urlForRequest">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DetailBusinessViewModel.getNumberOfCellsIn(section : Int) -&gt; Int:DetailViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "datasource.reviews.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -49,29 +43,16 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GoogleMapViewController.(updateMap() -&gt; ()).(closure #1):GoogleMapViewController.swift">
+         contextName = "GoogleMapViewController.(deleteMarkers() -&gt; ()).(closure #1):GoogleMapViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.businesess.count">
+               value = "businesess">
             </PersistentString>
             <PersistentString
-               value = "business.isOnMap">
+               value = "marker.icon">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "AppDelegate.application(UIApplication, didFinishLaunchingWithOptions : [UIApplicationLaunchOptionsKey : Any]?) -&gt; Bool:AppDelegate.swift">
-         <PersistentStrings>
             <PersistentString
-               value = "initialController.view">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "MarkerView.layoutViews() -&gt; ():MarkerView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.bounds">
+               value = "business.marker?.iconView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -84,10 +65,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GoogleMapViewController.mapView(GMSMapView, didTap : GMSMarker) -&gt; Bool:GoogleMapviewController + GoogleMapsDelegate.swift">
+         contextName = "Review.init(json : JSON) -&gt; Review:Review.swift">
          <PersistentStrings>
             <PersistentString
-               value = "marker.iconView">
+               value = "json[&quot;user&quot;][&quot;name&quot;].stringValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GoogleMapViewController.(deleteUnusedMarkers() -&gt; ()).(closure #1):GoogleMapViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "marker.map == mapView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -103,7 +92,72 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "YelpRequestRouter.get(() -&gt; ()?) -&gt; ():YelpRequestRouter.swift">
+         contextName = "DetailBusinessViewModel.sectionTypeFor(indexPath : IndexPath) -&gt; DetailBusinessDataSource.SectionType:DetailViewModel.swift">
+      </ContextState>
+      <ContextState
+         contextName = "BusinessDetailViewController.collectionView(UICollectionView, numberOfItemsInSection : Int) -&gt; Int:BusinessDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel.getNumberOfCellsIn(section: section)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GoogleMapViewController.(updateMap() -&gt; ()).(closure #1):GoogleMapViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.businesess.count">
+            </PersistentString>
+            <PersistentString
+               value = "business.isOnMap">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GoogleMapViewController.makeRequest() -&gt; ():GoogleMapViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "gMapViewModel.getBusinesess()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "YelpRequestRouter.(get(() -&gt; ()?) -&gt; ()).(parse #1)(json : JSON) -&gt; ():YelpRequestRouter.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "stateMachine.businesess">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BusinessDetailViewController.collectionView(UICollectionView, cellForItemAt : IndexPath) -&gt; UICollectionViewCell:BusinessDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.titleLabel">
+            </PersistentString>
+            <PersistentString
+               value = "businessToShow.devInfo.imageUrl">
+            </PersistentString>
+            <PersistentString
+               value = "businessToShow.devInfo.businessCategories">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.application(UIApplication, didFinishLaunchingWithOptions : [UIApplicationLaunchOptionsKey : Any]?) -&gt; Bool:AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "initialController.view">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GoogleMapViewController.mapView(GMSMapView, didTap : GMSMarker) -&gt; Bool:GoogleMapviewController + GoogleMapsDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "marker.iconView">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "YelpRequestRouter.(get(() -&gt; ()?) -&gt; ()).((parse #1)(json : JSON) -&gt; ()).(closure #2):YelpRequestRouter.swift">
@@ -112,18 +166,21 @@
                value = "stateMachine.businesess">
             </PersistentString>
             <PersistentString
-               value = "stateMachine.businesess[indexToDelete!].marker?.map">
+               value = "business?.marker?.map">
             </PersistentString>
             <PersistentString
-               value = "business?.marker?.map">
+               value = "stateMachine.businesess[indexToDelete!].marker?.map">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GoogleMapViewController.(deleteUnusedMarkers() -&gt; ()).(closure #1):GoogleMapViewController.swift">
+         contextName = "ReviewCollectionViewCell.setupWith(review : Review) -&gt; ():ReviewCollectionViewCell.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MarkerView.layoutViews() -&gt; ():MarkerView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "marker.map == mapView">
+               value = "self.bounds">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

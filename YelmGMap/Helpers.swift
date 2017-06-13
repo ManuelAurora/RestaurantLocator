@@ -12,6 +12,7 @@ extension Notification.Name
 {
     static let didRecieveCoordinate = Notification.Name("ManagerRecievedCoordinate")
     static let didRecieveBusinesess = Notification.Name("RequestRouterRecievedBusinesess")
+    static let didRecieveReviews    = Notification.Name("RequestRouterRecievedReviews")
 }
 
 func removeAllAlamofireNetworking() {

@@ -10,7 +10,8 @@ import UIKit
 
 class BusinessCollectionViewCell: UICollectionViewCell
 {
-    @IBOutlet weak var mainImageView: UIImageView!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var mainImageView: CachedImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var phoneNumberLabal: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!

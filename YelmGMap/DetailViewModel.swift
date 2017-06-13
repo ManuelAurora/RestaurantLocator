@@ -14,7 +14,7 @@ class DetailBusinessViewModel
     
     func sectionTypeFor(indexPath: IndexPath) -> DetailBusinessDataSource.SectionType {
         
-        return datasource.sections[indexPath.row]
+        return datasource.sections[indexPath.section]
     }
     
     func getNumberOfCellsIn(section: Int) -> Int {
@@ -23,8 +23,14 @@ class DetailBusinessViewModel
         
         switch sectionType
         {
-        case .basicInfo, .categories, .image, .reviews: return 1
+        case .basicInfo: return 1
+        case .reviews: return datasource.reviews.count
         }
+    }
+    
+    func getReviewForCellAt(indexPath: IndexPath) -> Review {
+        
+        return datasource.reviews[indexPath.row]
     }
     
     func getNumberOfSections() -> Int {

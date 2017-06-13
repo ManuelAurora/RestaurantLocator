@@ -58,24 +58,15 @@ class CachedImageView: UIImageView
     private var emptyImage = UIImage()
     private var urlStringForChecking: String?
     private let nc = NotificationCenter.default
-    
-    init(cornerRadius: Int = 0) {
-        super.init(frame: .zero)
-        
-        layer.cornerRadius = CGFloat(cornerRadius)
-        contentMode = .scaleAspectFill
-        clipsToBounds = true
-    }
-    
+
     deinit {
         nc.removeObserver(self)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-              
-        let cornerRadius = frame.height / 2
-        layer.cornerRadius = CGFloat(cornerRadius)
+                
+        layer.cornerRadius = 5
         contentMode = .scaleAspectFill
         clipsToBounds = true
     }
