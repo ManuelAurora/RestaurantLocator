@@ -18,10 +18,10 @@ extension GoogleMapViewController: GMSMapViewDelegate
     }
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
-        
+           
         makeRequest()
     }
-    
+        
     func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
         
         let view = MarkerView(frame: CGRect(origin: marker.infoWindowAnchor,
@@ -39,7 +39,7 @@ extension GoogleMapViewController: GMSMapViewDelegate
     
     private func getRatingFor(marker: GMSMarker) -> String {
         
-        let business = businesess.filter {
+        let business = gMapViewModel.getBusinesess().filter {
             $0.displayInfo.name == marker.title &&
                 $0.displayInfo.location.address == marker.snippet
             }.first

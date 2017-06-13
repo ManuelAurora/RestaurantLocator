@@ -19,12 +19,6 @@ class GoogleMapViewController: UIViewController
         return mv
     }()
     
-    var businesess = [Business]() {
-        didSet {
-            updateMap()
-        }
-    }
-    
     private let nc = NotificationCenter.default
     
     override func loadView() {
@@ -62,10 +56,9 @@ class GoogleMapViewController: UIViewController
         
     private func updateMap() {
         
-        businesess.forEach { business in
-            guard business.isOnTheMap == false else { return }
+        gMapViewModel.getBusinesess().forEach { business in
             
-            business.setOnMap()
+            guard business.isOnMap == false else { return }
             
             let marker = GMSMarker()
             let coord = business.devInfo.coordinate
@@ -76,6 +69,7 @@ class GoogleMapViewController: UIViewController
             marker.snippet = business.displayInfo.location.address
             marker.appearAnimation = .pop           
             marker.map = mapView
+            business.add(marker: marker)
         }        
     }
     
@@ -93,16 +87,38 @@ class GoogleMapViewController: UIViewController
     
     @objc private func getBusinesses() {
         
-       businesess = gMapViewModel.getBusinesess()
+       updateMap()
     }
     
     @objc private func getRestaurants() {
         
         makeRequest()
         setCamera()
+    }    
+    
+    private func deleteUnusedMarkers() {
+        
+        gMapViewModel.getBusinesess().forEach { business in
+            guard let marker = business.marker else { return }
+            
+            let point = mapView.projection.point(for: marker.position)
+            
+            if !mapView.bounds.contains(point)
+            {
+                let indexToDelete = gMapViewModel.getBusinesess().index { bus -> Bool in
+                    return bus.devInfo.id == business.devInfo.id
+                }
+                gMapViewModel.removeBusinessAt(index: indexToDelete!)
+                marker.map = nil
+            }
+        }
+        
+        if gMapViewModel.getBusinesess().count == 0 { mapView.clear() }
     }
     
     func makeRequest() {
+        
+        deleteUnusedMarkers()
         
         let radiusString = "\(getRadius())"
         
@@ -115,7 +131,7 @@ class GoogleMapViewController: UIViewController
         
         let centerPoint = mapView.center
         let centerCoordinate = mapView.projection.coordinate(for: centerPoint)
-        
+
         return centerCoordinate
     }
     

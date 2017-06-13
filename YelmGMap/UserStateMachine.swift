@@ -29,7 +29,7 @@ class UserStateMachine: NSObject
     
     var businesess = [Business]()
     var currentMapZoom: Float = 17
-    
+       
     fileprivate var isProperValueRecieved: Bool = false
     private var timer: Timer?
     private var _userLocation: CLLocation?

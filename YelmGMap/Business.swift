@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import GoogleMaps
 
 //MARK: Helpers
 struct Category
@@ -57,12 +58,12 @@ class Business
 {
     let devInfo: DevInfo
     let displayInfo: InfoToDisplay
+    private(set) var marker: GMSMarker?    
+    var isOnMap = false
     
-    private(set) var isOnTheMap: Bool = false
-    
-    func setOnMap() {
+    func add(marker: GMSMarker) {
         
-        isOnTheMap = true
+        self.marker = marker
     }
     
     init?(json: JSON) {

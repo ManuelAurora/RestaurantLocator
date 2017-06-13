@@ -112,7 +112,7 @@ enum YelpRequestRouter
     }
     
     func get(_ completion: (()->())? = nil) {
-                    
+        
         let params = parameters
         
         Alamofire.request(urlForRequest,
@@ -122,7 +122,7 @@ enum YelpRequestRouter
                             if let data = response.data
                             {
                                 let json = JSON(data: data)
-                                parse(json: json)                               
+                                parse(json: json)
                             }
         }
         
@@ -141,17 +141,26 @@ enum YelpRequestRouter
                 
                 businesess.forEach { business in
                     guard business != nil else { return }
-                    if !self.stateMachine.businesess.contains { bus in
-                        return bus.devInfo.id == business!.devInfo.id
+                    
+                    let isAlreadyHave = stateMachine.businesess.contains { bus in
+                        
+                        if bus.devInfo.id == business!.devInfo.id
+                        {
+                            bus.isOnMap = true
+                            return true
                         }
+                        return false
+                    }
+                    
+                    if !isAlreadyHave
                     {
-                        self.stateMachine.businesess.append(business!)
+                        stateMachine.businesess.append(business!)
                     }
                 }
-                
-                NotificationCenter.default.post(name: .didRecieveBusinesess,
-                                                object: nil)
             }
+            NotificationCenter.default.post(name: .didRecieveBusinesess,
+                                            object: nil)
         }
     }
 }
+

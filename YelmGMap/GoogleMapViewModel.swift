@@ -23,6 +23,11 @@ class GoogleMapViewModel
         return nil
     }
     
+    func removeBusinessAt(index: Int) {
+        
+        stateMachine.businesess.remove(at: index)
+    }
+     
     func getCurrentMapZoom() -> Float {
         
         return stateMachine.currentMapZoom
