@@ -23,15 +23,15 @@ class BusinessDetailViewController: UICollectionViewController, StoryboardInstan
     }
     deinit {
         nc.removeObserver(self)
-         print("DEINIT")
+         print("Debug: DEINIT")
     }
     
     private func subscribeNotifications() {
         
         nc.addObserver(forName: .didRecieveReviews,
                        object: nil,
-                       queue: nil) { _ in
-                        self.collectionView?.reloadSections(IndexSet(integer: 1))
+                       queue: nil) { [weak self]_ in
+                        self?.collectionView?.reloadSections(IndexSet(integer: 1)) //hardcoded
         }
     }
     
